@@ -80,7 +80,7 @@
         var userSignup = false;
         var phone ;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
-        var dateTime, status, online1 ;
+        var dateTime, status, read1=false, write1=false, read2=false, write2=false ;
      
      function gotoLogin() { 
              document.querySelector('#div2p1').innerHTML = "Please wait...";
@@ -163,7 +163,7 @@
             firebase.database().ref("editAppMessage").set({
             a_Name: name, 
             b_Message: message
-             });
+             }); write1 = true;
             document.getElementById("messageField").value = "";
          //   writeEditAppOnlineStatus();
                } else {
@@ -182,7 +182,7 @@
               // takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editAppMessage"); 
-               ref.on("value", function(snapshot) { newline();
+               ref.on("value", function(snapshot) { newline(); read1 = true;
                snapshot.forEach(function(element) {
                document.querySelector('#div5').innerHTML += element.val();
                // document.querySelector('#root').innerHTML +=`
@@ -206,10 +206,8 @@
         
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
-             //  setInterval(function(){
-              //   setTimeout(function(){
-               var bRef = firebase.database().ref("editAppOnline"); 
-               bRef.once("value", function(snapshot) {
+              var bRef = firebase.database().ref("editAppOnline"); 
+               bRef.once("value", function(snapshot) { read2 = true;
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
                cDate = snapshot.child("c_Date").val();
@@ -217,29 +215,31 @@
                eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div4').innerHTML += "<br>" + eTyping ;
-                });
-               //  } , 0002 );
-              //  } , 0005 );
-              }   
+                }); 
+              }
+          
+               
+            
+             
         
       // writeEditAppOnlineSatatus();
        function writeEditAppOnlineSatatus() {
-           // setInterval(function(){
-           //   setTimeout(function(){
-              getName();
+               getName();
               getOnlineStatus();
               getDateTime();
-             // getIP();
+           // getIP();
               firebase.database().ref("editAppOnline").set({
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
-             // d_IP: dIP,   
+           // d_IP: dIP,   
               e_Typing: "typing..."
-                });
-               //  } , 1000 );
-              //  } , 2000 );
-              }   
+               }); write2 = true;
+              }
+          
+              
+              
+              
               
         
        function getName() {
