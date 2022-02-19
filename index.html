@@ -277,15 +277,19 @@
  
         
         function initiateChat() {
-              updateOnlineStatus();
-              takeSnapshot();
-            //  setTimeout(writeEditAppOnlineStatus, 2000);
-           //   setTimeout(readEditAppOnlineStatus, 2000);
-              
-              setInterval(writeEditAppOnlineStatus, 2000);
-              setInterval(readEditAppOnlineStatus, 3000);
-              }
-                  
+                updateOnlineStatus();
+                takeSnapshot();
+              //  setTimeout(writeEditAppOnlineStatus, 2000);
+             //   setTimeout(readEditAppOnlineStatus, 2000);
+                setTimeout( f1, 5000 );
+                setTimeout( f2, 5000 );
+              function f1() {
+                setInterval(raedEditAppOnlineStatus, 3000);
+                }
+              function f2() {
+                setInterval(writeEditAppOnlineStatus, 2000);
+                }
+               }
               
                 
                  
