@@ -1,0 +1,297 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Firebase Tutorial</title>
+</head>
+<body>
+    <div id="div1">
+    <p> Welcome to editApp FamilyDay </p>
+    </div>
+    
+    <div id="div2">
+    <input type="password" placeholder="Username" id="usernameField">
+    <input type="password" placeholder="Password" id="passwordField">
+    <button onclick = "gotoLogin()"> Login </button> <br>
+   <!-- <input type="text" placeholder="Name" id="nameField">
+    <input type="number" placeholder="Phone" id="phonedField">  -->
+    <button onclick = "gotoSignup()"> Signup </button>
+    <p id="div2p1"></p>
+    </div>
+    
+    <div id="div3">
+    Name <input type="text" placeholder="Name" id="nameField">
+    Clear message <button onclick = "messageClear()"> Clear </button> <br>
+    <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
+    <button onclick = "sendMessage()"> Send </button>
+    </div>
+    
+     
+    <div id="div4"></div>
+    <div id="div5"></div>
+    <div id="root" ></div>
+    <div> <p id="root2"></p> </div>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      /*
+       var firebaseConfig = {
+        apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        authDomain: "tutorial-1b13c.firebaseapp.com",
+        projectId: "tutorial-1b13c",
+        storageBucket: "tutorial-1b13c.appspot.com",
+        messagingSenderId: "778382154294",
+        appId: "yyyyyyyyyyyyyyyyyyyyyyyyyyyyy",
+        measurementId: "G-5WR3S3W0N2"
+      };
+       */
+       const firebaseConfig = {
+  apiKey: "AIzaSyCmNVaTr8sTKQVSqZprpBK-AMTpUsNPUGs",
+  authDomain: "surbot-v1-1.firebaseapp.com",
+  databaseURL: "https://surbot-v1-1-default-rtdb.firebaseio.com",
+  projectId: "surbot-v1-1",
+  storageBucket: "surbot-v1-1.appspot.com",
+  messagingSenderId: "702504911981",
+  appId: "1:702504911981:web:6d1fea970a851c7ff3ab64"
+  };
+    
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+        
+        var username ; // = document.getElementById("usernameField").value ;
+        var password ; // = document.getElementById("passwordField").value ;
+        var name ;     // = document.getElementById("nameField").value ;
+        var message ;  // = document.getElementById("messageField").value ;
+        var chat = false;
+        var userSignup = false;
+        var phone ;
+        var aName, bPhone, cUsername, dPassword, bStatus, cDate ;
+        var dateTime, status, online1 ;
+     
+     function gotoLogin() { 
+             document.querySelector('#div2p1').innerHTML = "Please wait...";
+                 getLoginInfo();
+                 getEditAppUserInfo2();
+             setTimeout(function(){
+             if (username == cUsername && password == dPassword) {
+                  chat = true; 
+                  
+                  document.querySelector('#div2').innerHTML = "";
+                  document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
+                  initiateChat();
+                 //  updateOnlineStatus();
+                //  readEditAppOnlineStatus();
+                //  writeEditAppOnlineStatus();
+                //  takeSnapshot();
+                  }
+                  
+              else { 
+                  chat = false; 
+                  // alert('Wrong Username and Password!');
+                  document.querySelector('#div2p1').innerHTML = "";
+                  document.querySelector('#div2p1').innerHTML += "Wrong Username and Password !";
+                   } 
+                  } , 5000 );
+                }
+              function getLoginInfo() {
+                  username = document.getElementById("usernameField").value ;
+                  password = document.getElementById("passwordField").value ;
+                  // name = document.getElementById("nameField").value ;
+                  // phone = document.getElementById("phoneField").value ;
+                  } 
+               function getEditAppUserInfo2() {
+                 var aRef = firebase.database().ref("editAppUserInfo");
+                 aRef.once("value", function(snapshot) {
+                 // aName = snapshot.child("a_Name").val();
+                 // bPhone = snapshot.child("b_Phone").val();
+                 cUsername = snapshot.child("c_Username").val();
+                 dPassword = snapshot.child("d_Password").val();
+                  });
+                 }  
+               
+      
+      function gotoSignup() {
+              getSignupInfo();
+              getEditAppUserInfo();
+              firebase.database().ref("editAppUserInfo").set({
+              // a_Name: name, 
+              // b_Phone: phone, 
+              c_Username: username, 
+              d_Password: password
+              });
+              document.querySelector('#div2p1').innerHTML = "Please wait..." ;
+              setTimeout(wait1, 15000);
+             }
+          function getSignupInfo() {
+              // name = document.getElementById("nameField").value ;
+              // phone = document.getElementById("phoneField").value ;
+              username = document.getElementById("usernameField").value ;
+              password = document.getElementById("passwordField").value ;
+               }
+           function getEditAppUserInfo() {
+                 var aRef = firebase.database().ref("editAppUserInfo");
+                 aRef.once("value", function(snapshot) {
+                 // aName = snapshot.child("a_Name").val();
+                 // bPhone = snapshot.child("b_Phone").val();
+                 cUsername = snapshot.child("c_Username").val();
+                 dPassword = snapshot.child("d_Password").val();
+                   });
+                  }
+           function wait1() {
+                  document.querySelector('#div2p1').innerHTML = "" ;
+                  document.querySelector('#div2p1').innerHTML += "Signup done" ;
+                  document.querySelector('#div2p1').innerHTML += '<br>' + "Username:" + cUsername ;
+                  document.querySelector('#div2p1').innerHTML += '<br>' + "Password:" + dPassword ;
+                  }
+       
+      function sendMessage() {  if(chat) { 
+            getMessage();
+            firebase.database().ref("editAppMessage").set({
+            a_Name: name, 
+            b_Message: message
+             });
+            document.getElementById("messageField").value = "";
+         //   writeEditAppOnlineStatus();
+               } else {
+                   document.querySelector('#div2p1').innerHTML = "Please Login with Username and Password";
+                    }
+             }
+      
+        
+       function getMessage() {
+              name = document.getElementById("nameField").value ;
+              message = document.getElementById("messageField").value ;
+              }
+        
+      
+        
+              // takeSnapshot();
+       function takeSnapshot() { 
+               var ref = firebase.database().ref("editAppMessage"); 
+               ref.on("value", function(snapshot) { newline();
+               snapshot.forEach(function(element) {
+               document.querySelector('#div5').innerHTML += element.val();
+               // document.querySelector('#root').innerHTML +=`
+               // <div>${element.val()}<\div>
+               // ` 
+                }); 
+               });
+              }
+        
+        // OnlineStatus();
+        function updateOnlineStatus() { 
+                 if (navigator.onLine) {
+                   status = "online";
+                   document.querySelector('#div4').innerHTML = "You are online" ;
+                     } else {
+                      document.querySelector('#div4').innerHTML = "You are offline" ;
+                      status = "offline" ;
+                      }
+                    } 
+                    
+        
+         // readEditAppOnlineStatus();
+        function readEditAppOnlineStatus() { 
+               setInterval(function(){
+                 setTimeout(function(){
+               var bRef = firebase.database().ref("editAppOnline"); 
+               bRef.once("value", function(snapshot) {
+               aName = snapshot.child("a_Name").val();
+               bStatus = snapshot.child("b_Status").val();
+               cDate = snapshot.child("c_Date").val();
+               document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
+                });
+                 } , 0002 );
+                } , 0005 );
+              }   
+        
+      // writeEditAppOnlineSatatus();
+       function writeEditAppOnlineSatatus() {
+            setInterval(function(){
+              setTimeout(function(){
+              getName();
+              getOnlineStatus();
+              getDateTime();
+              firebase.database().ref("editAppOnline").set({
+              a_Name: aName , 
+              b_Status: status , 
+              c_Date: dateTime
+                });
+                 } , 1000 );
+                } , 2000 );
+              }   
+              
+        
+       function getName() {
+              aName = document.getElementById("nameField").value ;
+              }  
+       
+        function newline() {
+               document.querySelector('#div5').innerHTML += '<br>' ;
+               }  
+        
+        function getOnlineStatus() { 
+                  if (navigator.onLine) {
+                     status = "online";
+                      } else {
+                      status = "offline";
+                      }
+                     }
+        
+        
+        function getDateTime() {  
+              var today = new Date();
+              var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
+              var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              dateTime = date +" "+ time;
+              }
+        
+        function messageClear() {
+               document.querySelector('#div5').innerHTML = "";
+                 getOnlineStatus();
+             writeEditAppOnlineSatatus();   
+             readEditAppOnlineStatus();
+                takeSnapshot();
+                }
+        
+        
+                     
+                      
+ 
+        
+        function initiateChat() {
+             /* updateOnlineStatus();
+              setTimeout(function(){
+                  takeSnapshot();
+                  } , 5000 );
+              setTimeout(function(){
+                  readEditAppOnlineStatus();
+                  } , 5000 );
+              setTimeout(function(){
+                  writeEditAppOnlineStatus();
+                  } , 5000 ); */
+                }
+                 
+        
+        
+        
+        
+        
+        
+    </script>
+
+    
+</body>
+</html>
