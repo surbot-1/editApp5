@@ -165,7 +165,7 @@
             b_Message: message
              }); write1 = true;
             document.getElementById("messageField").value = "";
-         //   writeEditAppOnlineStatus();
+            writeEditAppOnlineStatus();
                } else {
                    document.querySelector('#div2p1').innerHTML = "Please Login with Username and Password";
                     }
@@ -276,14 +276,14 @@
               // takeSnapshot();
              //  writeEditAppOnlineSatatus();   
               // readEditAppOnlineStatus();
-               initiateChat();
+             //  initiateChat();
                 }
         
         
              var keyDown = document.getElementById("messageField");
                  keyDown.addEventListener('keydown', keyDown);
          function keyDown() {
-                // writeEditAppOnlineSatatus();
+                  readEditAppOnlineSatatus();
                   }
         
          function onKeyDown() {
@@ -300,7 +300,7 @@
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-                setTimeout( f1, 5000 );
+             /*   setTimeout( f1, 5000 );
                 setTimeout( f2, 9000 );
               function f1() {
                 setInterval(writeEditAppOnlineStatus, 3000);
@@ -308,7 +308,7 @@
               function f2() {
                 setInterval(readEditAppOnlineStatus, 2000);
                 }
-               }
+               } */
               
                 
                  
