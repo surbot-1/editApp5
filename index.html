@@ -273,10 +273,10 @@
         
         function messageClear() {
                document.querySelector('#div5').innerHTML = "";
-               takeSnapshot();
-               writeEditAppOnlineSatatus();   
+              // takeSnapshot();
+             //  writeEditAppOnlineSatatus();   
                readEditAppOnlineStatus();
-            
+               initiateChat();
                 }
         
         
@@ -295,16 +295,17 @@
         
         function initiateChat() {
                 updateOnlineStatus();
+                readEditAppOnlineStatus();
                 takeSnapshot();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-                setInterval( f1, 5000 );
-                setInterval( f2, 5000 );
+                setInterval( f1, 2000 );
+                setInterval( f2, 2000 );
               function f1() {
-                setInterval(raedEditAppOnlineStatus, 2000);
+                setInterval(raedEditAppOnlineStatus, 0001);
                 }
               function f2() {
-                setInterval(writeEditAppOnlineStatus, 3000);
+                setInterval(writeEditAppOnlineStatus, 1000);
                 }
                }
               
