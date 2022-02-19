@@ -287,7 +287,8 @@
                   }
         
          function onKeyDown() {
-                // document.querySelector('#div4').innerHTML = "you are typing...";
+                  document.querySelector('#div4').innerHTML = write1 + read1+ write2 + read2 ;
+                  write1=false; read1=false; write2=false; read2=false;
                   }
  
                       
@@ -296,11 +297,11 @@
         function initiateChat() {
                 updateOnlineStatus();
                 takeSnapshot();
-                writeEditAppOnlineStatus();
+               // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-                setTimeout( f1, 2000 );
-                setTimeout( f2, 4000 );
+                setTimeout( f1, 5000 );
+                setTimeout( f2, 9000 );
               function f1() {
                 setInterval(writeEditAppOnlineStatus, 3000);
                 }
