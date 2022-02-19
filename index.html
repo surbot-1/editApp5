@@ -80,7 +80,7 @@
         var userSignup = false;
         var phone ;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
-        var dateTime, status, read1=false, write1=false, read2=false, write2=false ;
+        var dateTime, status ;
      
      function gotoLogin() { 
              document.querySelector('#div2p1').innerHTML = "Please wait...";
@@ -158,7 +158,7 @@
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Password:" + dPassword ;
                   }
        
-      function sendMessage() {  if(chat) { write1 = true;
+      function sendMessage() {  if(chat) {
             getMessage();
             firebase.database().ref("editAppMessage").set({
             a_Name: name, 
@@ -182,7 +182,7 @@
               // takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editAppMessage"); 
-               ref.on("value", function(snapshot) { newline(); read1 = true;
+               ref.on("value", function(snapshot) { newline();
                snapshot.forEach(function(element) {
                document.querySelector('#div5').innerHTML += element.val();
                // document.querySelector('#root').innerHTML +=`
@@ -207,7 +207,7 @@
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
               var bRef = firebase.database().ref("editAppOnline"); 
-               bRef.once("value", function(snapshot) { read2 = true;
+               bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
                cDate = snapshot.child("c_Date").val();
@@ -223,7 +223,7 @@
              
         
       // writeEditAppOnlineSatatus();
-       function writeEditAppOnlineSatatus() {  write2 = true;
+       function writeEditAppOnlineSatatus() { 
                getName();
               getOnlineStatus();
               getDateTime();
@@ -288,7 +288,7 @@
         
          function onKeyDown() {
                  // document.querySelector('#div4').innerHTML = write1 + read1+ write2 + read2 ;
-                //  write1=false; read1=false; write2=false; read2=false;
+                
                   }
  
                       
