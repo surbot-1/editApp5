@@ -24,7 +24,7 @@
     <div id="div3">
     Name <input type="text" placeholder="Name" id="nameField">
     Clear message <button onclick = "messageClear()"> Clear </button> <br>
-    <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
+    <textarea  onkeydown="onKeyDown()"  rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
     <button onclick = "sendMessage()"> Send </button>
     </div>
     
