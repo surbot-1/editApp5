@@ -204,8 +204,8 @@
         
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
-               setInterval(function(){
-                 setTimeout(function(){
+             //  setInterval(function(){
+              //   setTimeout(function(){
                var bRef = firebase.database().ref("editAppOnline"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
@@ -213,14 +213,14 @@
                cDate = snapshot.child("c_Date").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
                 });
-                 } , 0002 );
-                } , 0005 );
+               //  } , 0002 );
+              //  } , 0005 );
               }   
         
       // writeEditAppOnlineSatatus();
        function writeEditAppOnlineSatatus() {
-            setInterval(function(){
-              setTimeout(function(){
+           // setInterval(function(){
+           //   setTimeout(function(){
               getName();
               getOnlineStatus();
               getDateTime();
@@ -229,8 +229,8 @@
               b_Status: status , 
               c_Date: dateTime
                 });
-                 } , 1000 );
-                } , 2000 );
+               //  } , 1000 );
+              //  } , 2000 );
               }   
               
         
@@ -277,17 +277,17 @@
  
         
         function initiateChat() {
-             /* updateOnlineStatus();
-              setTimeout(function(){
-                  takeSnapshot();
-                  } , 5000 );
-              setTimeout(function(){
-                  readEditAppOnlineStatus();
-                  } , 5000 );
-              setTimeout(function(){
-                  writeEditAppOnlineStatus();
-                  } , 5000 ); */
-                }
+              updateOnlineStatus();
+              setTimeout(takeSnapshot, 5000);
+              setTimeout(writeEditAppOnlineStatus, 5000);
+              setTimeout(readEditAppOnlineStatus, 5000);
+              setInterval(takeSnapshot, 5000);
+              setInterval(writeEditAppOnlineStatus, 5000);
+              setInterval(readEditAppOnlineStatus, 5000);
+              }
+                  
+              
+                
                  
         
         
