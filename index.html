@@ -267,7 +267,12 @@
                 }
         
         
-                     
+              var keyDown = document.getElementById("messageField");
+                 keyDowm.addEventListener('keydown', onKeyDown);
+         function onKeyDown() {
+                 document.querySelector('#div4').innerHTML = "you are typing...";
+                  }
+ 
                       
  
         
