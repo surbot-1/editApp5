@@ -229,12 +229,12 @@
               getName();
               getOnlineStatus();
               getDateTime();
-              getIP();
+             // getIP();
               firebase.database().ref("editAppOnline").set({
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
-              d_IP: dIP,   
+             // d_IP: dIP,   
               e_Typing: "typing..."
                 });
                //  } , 1000 );
@@ -268,8 +268,8 @@
         
         function getIP() {
            dIP=  getIPs();   // .then(res => document.write(res.join('\n')));
-            
              }
+             
         
         function messageClear() {
                document.querySelector('#div5').innerHTML = "";
@@ -298,8 +298,8 @@
                 takeSnapshot();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-                setTimeout( f1, 5000 );
-                setTimeout( f2, 5000 );
+                setInterval( f1, 5000 );
+                setInterval( f2, 5000 );
               function f1() {
                 setInterval(raedEditAppOnlineStatus, 2000);
                 }
