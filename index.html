@@ -158,12 +158,12 @@
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Password:" + dPassword ;
                   }
        
-      function sendMessage() {  if(chat) { 
+      function sendMessage() {  if(chat) { write1 = true;
             getMessage();
             firebase.database().ref("editAppMessage").set({
             a_Name: name, 
             b_Message: message
-             }); write1 = true;
+             }); 
             document.getElementById("messageField").value = "";
             writeEditAppOnlineStatus();
                } else {
@@ -223,7 +223,7 @@
              
         
       // writeEditAppOnlineSatatus();
-       function writeEditAppOnlineSatatus() {
+       function writeEditAppOnlineSatatus() {  write2 = true;
                getName();
               getOnlineStatus();
               getDateTime();
@@ -234,7 +234,7 @@
               c_Date: dateTime, 
            // d_IP: dIP,   
               e_Typing: "typing..."
-               }); write2 = true;
+               }); 
               }
           
               
