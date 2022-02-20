@@ -84,7 +84,7 @@
         var message ;  // = document.getElementById("messageField").value ;
         var chat = false;
         var userSignup = false;
-        var phone ;
+        var phone, typingStatus;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
         var dateTime, status, readEAOS = false, writeEAOS = false ;
      
@@ -171,7 +171,8 @@
             b_Message: message
              }); 
             document.getElementById("messageField").value = "";
-          //  writeEditAppOnlineStatus();
+            typingStatus = "sent message";
+            writeEAOTS();
                } else {
                    document.querySelector('#div2p1').innerHTML = "Please Login with Username and Password";
                     }
@@ -270,7 +271,7 @@
            //   b_Status: status , 
            //  c_Date: dateTime, 
            // d_IP: dIP,   
-              e_Typing: "typing..."
+              e_Typing: typingStatus
                });
               }
               
@@ -307,6 +308,7 @@
         
         function messageClear() {
                document.querySelector('#div6').innerHTML = "";
+               readEditAppOnlineSatatus();
               // takeSnapshot();
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
@@ -317,6 +319,7 @@
         document.getElementById("messageField").addEventListener("keydown", keyDown);
         
         function keyDown() {
+                typingStatus = "typing...";
                  writeEAOTS();
                  }
                
