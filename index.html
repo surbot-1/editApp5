@@ -281,7 +281,7 @@
         function messageClear() {
                document.querySelector('#div5').innerHTML = "";
               // takeSnapshot();
-            //   readEditAppOnlineSatatus(); 
+              // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
              //  initiateChat();
                 }
@@ -307,7 +307,7 @@
         
         function initiateChat() {
                 updateOnlineStatus();
-                // takeSnapshot();
+                takeSnapshot();
           //  setInterval(readEditAppOnlineStatus, 0001);
            // setInterval(writeEditAppOnlineStatus, 0001);
           //  setInterval( check, 0001 );
@@ -315,7 +315,7 @@
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-               setInterval( f1, 1000);
+                setInterval( f1, 1000);
                 setInterval( f2, 5000);
               function f1() {
                 setTimeout(readEditAppOnlineStatus, 0001);
@@ -323,8 +323,8 @@
               function f2() {
                 setTimeout(writeEditAppOnlineStatus, 3000);
                  } 
-                 takeSnapshot();
-               } 
+               }
+               
               
         // function check() {
              //   readEditAppOnlineSatatus();
