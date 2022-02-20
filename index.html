@@ -84,7 +84,7 @@
         var message ;  // = document.getElementById("messageField").value ;
         var chat = false;
         var userSignup = false;
-        var phone, typingStatus;
+        var phone, typingStatus, date, time ;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
         var dateTime, status, readEAOS = false, writeEAOS = false ;
      
@@ -166,12 +166,13 @@
        
       function sendMessage() {  if(chat) {
             getMessage();
+            getDateTime();
             firebase.database().ref("editAppMessage").set({
-            a_Name: name, 
-            b_Message: message
+            a_Name: name + " " + time, 
+            b_Message: message 
              }); 
             document.getElementById("messageField").value = "";
-            getDateTime();
+           // getDateTime();
             typingStatus = "sent message" + " " + dateTime ;
             writeEAOTS();
                } else {
@@ -311,8 +312,8 @@
         
         function getDateTime() {  
               var today = new Date();
-              var date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
-              var time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                  date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
+                  time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
               dateTime = date +" "+ time;
               }
         
