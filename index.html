@@ -31,6 +31,7 @@
      
     <div id="div4"></div>
     <div id="div5"></div>
+    <div id="div5"></div>
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
     
@@ -283,11 +284,13 @@
              var keyDown = document.getElementById("messageField");
                  keyDown.addEventListener('keydown', keyDown);
          function keyDown() {
-                  readEditAppOnlineSatatus();
+                 document.querySelector('#div6').innerHTML += '<br>' + "Youare typing..." ;
+                 // writeEditAppOnlineSatatus();
+                  // readEditAppOnlineSatatus();
                   }
         
          function onKeyDown() {
-                 // document.querySelector('#div4').innerHTML = write1 + read1+ write2 + read2 ;
+                 // document.querySelector('#div4').innerHTML = "Youare typing..." ;
                 
                   }
  
