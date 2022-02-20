@@ -40,7 +40,7 @@
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
     
-   <!-- <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>  -->
+    <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
@@ -217,10 +217,10 @@
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
                cDate = snapshot.child("c_Date").val();
-              // dIP = snapshot.child("d_IP").val();
-               eTyping = snapshot.child("e_Typing").val();
+               dIP = snapshot.child("d_IP").val();
+              // eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
-               document.querySelector('#div4').innerHTML += ' ' + eTyping ;
+               document.querySelector('#div4').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
               }
@@ -234,13 +234,13 @@
               getName();
               getOnlineStatus();
               getDateTime();
-           // getIP();
+              getIP();
               firebase.database().ref("editAppOnline").set({
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
-           // d_IP: dIP,   
-              e_Typing: "typing..."
+              d_IP: dIP   
+             // e_Typing: "typing..."
                }); // writeEAOS = true;
               }
         
@@ -299,9 +299,9 @@
               dateTime = date +" "+ time;
               }
         
-       // function getIP() {
-         //     dIP =  getIPs();   // .then(res => document.write(res.join('\n')));
-           //  }
+        function getIP() {
+             dIP =  getIPs();   // .then(res => document.write(res.join('\n')));
+             }
              
         
         function messageClear() {
