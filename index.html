@@ -213,7 +213,7 @@
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
               var bRef = firebase.database().ref("editAppOnline"); 
-               bRef.on("value", function(snapshot) {
+               bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
                cDate = snapshot.child("c_Date").val();
@@ -310,19 +310,19 @@
                 takeSnapshot();
           //  setInterval(readEditAppOnlineStatus, 0001);
            // setInterval(writeEditAppOnlineStatus, 0001);
-            setInterval( check, 0001 );
-                readEditAppOnlineSatatus();
+          //  setInterval( check, 0001 );
+             //   readEditAppOnlineSatatus();
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-              /*  setInterval( f1, 5000 );
-                setInterval( f2, 5000 );
+                setInterval( f1, 2000 );
+                setInterval( f2, 2000 );
               function f1() {
                 setTimeout(readEditAppOnlineStatus, 0001);
                 }
               function f2() {
-                setTimeout(writeEditAppOnlineStatus, 2000);
-                 } */
+                setTimeout(writeEditAppOnlineStatus, 1000);
+                 } 
                } 
               
          function check() {
