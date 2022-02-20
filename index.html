@@ -315,18 +315,18 @@
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-              /*  setTimeout( f1, 5000 );
-                setTimeout( f2, 8000 );
+              /*  setInterval( f1, 5000 );
+                setInterval( f2, 5000 );
               function f1() {
-                setInterval(readEditAppOnlineStatus, 0001);
+                setTimeout(readEditAppOnlineStatus, 0001);
                 }
               function f2() {
-                setInterval(writeEditAppOnlineStatus, 1000);
+                setTimeout(writeEditAppOnlineStatus, 2000);
                  } */
                } 
               
          function check() {
-              //  readEditAppOnlineSatatus();
+                readEditAppOnlineSatatus();
              if (readEAOS) {
                 writeEditAppOnlineStatus();
                  readEAOS = false;
