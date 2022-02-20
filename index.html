@@ -209,6 +209,21 @@
                       status = "offline" ;
                       }
                     } 
+        
+        function readEditAppOnlineSessage() { 
+              var bRef = firebase.database().ref("editAppMessage"); 
+               bRef.once("value", function(snapshot) {
+               aName = snapshot.child("a_Name").val();
+               bMessage = snapshot.child("b_Message").val();
+              // cDate = snapshot.child("c_Date").val();
+             //  dIP = snapshot.child("d_IP").val();
+              // eTyping = snapshot.child("e_Typing").val();
+               document.querySelector('#div6').innerHTML += "<br>" + aName + "<br>" + bMessage ;
+              // document.querySelector('#div6').innerHTML += ' ' + dIP ;
+              // readEAOS = true; //  writeEditAppOnlineStatus();
+                }); 
+              }
+        
                     
         
          // readEditAppOnlineStatus();
@@ -308,7 +323,7 @@
         
         function messageClear() {
                document.querySelector('#div6').innerHTML = "";
-               readEditAppOnlineSatatus();
+               readEditAppOnlineSessage();
               // takeSnapshot();
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
