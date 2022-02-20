@@ -281,8 +281,10 @@
                 }
         
         
-             var keyDown = document.getElementById("messageField");
-                 keyDown.addEventListener("keydown", keyDown);
+        document.getElementById("messageField").addEventListener("keydown", keyDown);
+        
+            
+               
          function keyDown() {
                  document.querySelector('#div6').innerHTML += '<br>' + "You are typing..." ;
                  // readEditAppOnlineSatatus();
