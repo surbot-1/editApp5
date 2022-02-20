@@ -171,7 +171,7 @@
             b_Message: message
              }); 
             document.getElementById("messageField").value = "";
-            getDate();
+            getDateTime();
             typingStatus = "sent message" + " " + dateTime ;
             writeEAOTS();
                } else {
@@ -335,6 +335,7 @@
         document.getElementById("messageField").addEventListener("keydown", keyDown);
         
         function keyDown() {
+                getDeatTime();
                 typingStatus = "typing..." + " " + dateTime ;
                  writeEAOTS();
                  }
