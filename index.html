@@ -171,7 +171,8 @@
             b_Message: message
              }); 
             document.getElementById("messageField").value = "";
-            typingStatus = "sent message";
+            getDate();
+            typingStatus = "sent message" + " " + dateTime ;
             writeEAOTS();
                } else {
                    document.querySelector('#div2p1').innerHTML = "Please Login with Username and Password";
@@ -334,7 +335,7 @@
         document.getElementById("messageField").addEventListener("keydown", keyDown);
         
         function keyDown() {
-                typingStatus = "typing...";
+                typingStatus = "typing..." + " " + dateTime ;
                  writeEAOTS();
                  }
                
