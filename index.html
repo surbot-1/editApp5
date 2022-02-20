@@ -221,7 +221,7 @@
                eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div4').innerHTML += '<br>' + eTyping ;
-                   writeEditAppOnlineStatus();
+                 //  writeEditAppOnlineStatus();
                 }); 
               }
           
@@ -309,7 +309,7 @@
                 updateOnlineStatus();
                 takeSnapshot();
             setInterval(readEditAppOnlineStatus, 0001);
-         //   setInterval(writeEditAppOnlineStatus, 1000);
+            setInterval(writeEditAppOnlineStatus, 0001);
                // readEditAppOnlineSatatus();
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
