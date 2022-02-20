@@ -189,8 +189,8 @@
        function takeSnapshot() { 
                var ref = firebase.database().ref("editAppMessage"); 
                ref.on("value", function(snapshot) { newline();
-               snapshot.forEach(function(element) {
-               document.querySelector('#div5').innerHTML += element.val();
+               snapshot.forEach(function(element) { newline();
+               document.querySelector('#div6').innerHTML += element.val();
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
@@ -243,10 +243,36 @@
               e_Typing: "typing..."
                }); // writeEAOS = true;
               }
+        
+        
           
+        function readEAOTS() { 
+              var bRef = firebase.database().ref("editAppOnlineTyping"); 
+               bRef.once("value", function(snapshot) {
+               aName = snapshot.child("a_Name").val();
+             //  bStatus = snapshot.child("b_Status").val();
+             //  cDate = snapshot.child("c_Date").val();
+              // dIP = snapshot.child("d_IP").val();
+               eTyping = snapshot.child("e_Typing").val();
+             //  document.querySelector('#div5').innerHTML = aName + " " + bStatus + " " + cDate ;
+               document.querySelector('#div5').innerHTML = aName + " " + eTyping ;
+                }); 
+               }
+                
               
-              
-              
+        function writeEAOTS() { 
+              getName();
+           //  getOnlineStatus();
+           //   getDateTime();
+           // getIP();
+              firebase.database().ref("editAppOnlineTyping").set({
+              a_Name: aName , 
+           //   b_Status: status , 
+           //  c_Date: dateTime, 
+           // d_IP: dIP,   
+              e_Typing: "typing..."
+               });
+              }
               
         
        function getName() {
@@ -279,7 +305,7 @@
              
         
         function messageClear() {
-               document.querySelector('#div5').innerHTML = "";
+               document.querySelector('#div6').innerHTML = "";
               // takeSnapshot();
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
@@ -289,13 +315,12 @@
         
         document.getElementById("messageField").addEventListener("keydown", keyDown);
         
-            
+        function keyDown() {
+                 writeEAOTS();
+                 }
                
-         function keyDown() {
-               //  document.querySelector('#div6').innerHTML += '<br>' + "You are typing..." ;
-                 // readEditAppOnlineSatatus();
-                 //  writeEditAppOnlineSatatus();
-                  }
+         
+                  
         
          function onKeyDown() {
                //  document.querySelector('#div6').innerHTML += '<br>' + "You are typing..." ;
@@ -316,14 +341,19 @@
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
                 setInterval( f1, 0002);
-                setInterval( f2, 5000);
+                setInterval( f2, 10000);
+                setInterval( f3, 0002);
               function f1() {
                 setTimeout(readEditAppOnlineStatus, 0001);
                 }
               function f2() {
                 setTimeout(writeEditAppOnlineSatatus, 2000);
                  } 
+              function f3() {
+                setTimeout(readEAOTS, 0001);
+                }
                }
+                    
                
               
         // function check() {
