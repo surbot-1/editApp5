@@ -294,7 +294,7 @@
          function keyDown() {
                //  document.querySelector('#div6').innerHTML += '<br>' + "You are typing..." ;
                  // readEditAppOnlineSatatus();
-                 //  writeEditAppOnlineSatatus();
+                   writeEditAppOnlineSatatus();
                   }
         
          function onKeyDown() {
@@ -316,12 +316,12 @@
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
                setInterval( f1, 0002);
-                setInterval( f2, 0005);
+                setInterval( f2, 5000);
               function f1() {
                 setTimeout(readEditAppOnlineStatus, 0001);
                 }
               function f2() {
-                setTimeout(writeEditAppOnlineStatus, 0002);
+                setTimeout(writeEditAppOnlineStatus, 2000);
                  } 
                } 
               
