@@ -34,7 +34,7 @@
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
     
-    <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
+   <!-- <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>  -->
     
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
@@ -214,7 +214,7 @@
               // dIP = snapshot.child("d_IP").val();
                eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
-               document.querySelector('#div4').innerHTML += "<br>" + eTyping ;
+               document.querySelector('#div4').innerHTML += '<br>' + eTyping ;
                 }); 
               }
           
@@ -224,7 +224,7 @@
         
       // writeEditAppOnlineSatatus();
        function writeEditAppOnlineSatatus() { 
-               getName();
+              getName();
               getOnlineStatus();
               getDateTime();
            // getIP();
@@ -274,7 +274,7 @@
         function messageClear() {
                document.querySelector('#div5').innerHTML = "";
               // takeSnapshot();
-             //  writeEditAppOnlineSatatus();   
+               writeEditAppOnlineSatatus(); 
               // readEditAppOnlineStatus();
              //  initiateChat();
                 }
@@ -300,15 +300,15 @@
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
              //   setTimeout(readEditAppOnlineStatus, 2000);
-             /*   setTimeout( f1, 5000 );
+                setTimeout( f1, 5000 );
                 setTimeout( f2, 8000 );
               function f1() {
                 setInterval(writeEditAppOnlineStatus, 2000);
                 }
               function f2() {
                 setInterval(readEditAppOnlineStatus, 2000);
-                }
-               } */
+                } 
+               } 
               
                 
                  
