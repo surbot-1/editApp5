@@ -213,7 +213,7 @@
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
               var bRef = firebase.database().ref("editAppOnline"); 
-               bRef.once("value", function(snapshot) {
+               bRef.on("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
                cDate = snapshot.child("c_Date").val();
@@ -326,14 +326,14 @@
                } 
               
          function check() {
-                readEditAppOnlineSatatus();
+              //  readEditAppOnlineSatatus();
              if (readEAOS) {
                 writeEditAppOnlineStatus();
                  readEAOS = false;
                }  
-             if (writeEAOS) {
-                readEditAppOnlineStatus();
-                writeEAOS = false;
+           //  if (writeEAOS) {
+            //    readEditAppOnlineStatus();
+             // writeEAOS = false;
                 }  
               }
              
