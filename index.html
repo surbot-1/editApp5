@@ -275,8 +275,8 @@
         function messageClear() {
                document.querySelector('#div5').innerHTML = "";
               // takeSnapshot();
-            //   writeEditAppOnlineSatatus(); 
-              // readEditAppOnlineStatus();
+            //   readEditAppOnlineSatatus(); 
+              // writeEditAppOnlineStatus();
              //  initiateChat();
                 }
         
@@ -285,8 +285,8 @@
                  keyDown.addEventListener('keydown', keyDown);
          function keyDown() {
                  document.querySelector('#div6').innerHTML += '<br>' + "Youare typing..." ;
-                 // writeEditAppOnlineSatatus();
-                  // readEditAppOnlineSatatus();
+                 // readEditAppOnlineSatatus();
+                  // writeEditAppOnlineSatatus();
                   }
         
          function onKeyDown() {
@@ -306,10 +306,10 @@
                 setTimeout( f1, 5000 );
                 setTimeout( f2, 8000 );
               function f1() {
-                setInterval(writeEditAppOnlineStatus, 2000);
+                setInterval(readEditAppOnlineStatus, 2000);
                 }
               function f2() {
-                setInterval(readEditAppOnlineStatus, 2000);
+                setInterval(writeEditAppOnlineStatus, 2000);
                 } 
                } 
               
