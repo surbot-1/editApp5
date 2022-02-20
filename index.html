@@ -188,7 +188,7 @@
               // takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editAppMessage"); 
-               ref.once("value", function(snapshot) { newline();
+               ref.on("value", function(snapshot) { newline();
                snapshot.forEach(function(element) {
                document.querySelector('#div5').innerHTML += element.val();
                // document.querySelector('#root').innerHTML +=`
