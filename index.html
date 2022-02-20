@@ -86,7 +86,7 @@
         var userSignup = false;
         var phone ;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
-        var dateTime, status ;
+        var dateTime, status, readEAOS, writeEAOS, check ;
      
      function gotoLogin() { 
              document.querySelector('#div2p1').innerHTML = "Please wait...";
@@ -221,7 +221,7 @@
                eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div4').innerHTML += ' ' + eTyping ;
-                 //  writeEditAppOnlineStatus();
+               readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
               }
           
@@ -241,7 +241,7 @@
               c_Date: dateTime, 
            // d_IP: dIP,   
               e_Typing: "typing..."
-               }); 
+               }); writeEAOS = true;
               }
           
               
@@ -309,7 +309,8 @@
                 updateOnlineStatus();
                 takeSnapshot();
             setInterval(readEditAppOnlineStatus, 0001);
-            setInterval(writeEditAppOnlineStatus, 0001);
+           // setInterval(writeEditAppOnlineStatus, 0001);
+            setInterval( check, 0100 );
                // readEditAppOnlineSatatus();
                // writeEditAppOnlineStatus();
               //  setTimeout(writeEditAppOnlineStatus, 2000);
@@ -324,9 +325,18 @@
                  } */
                } 
               
-         /*  while(chat) {
-               initiateChat();
-               }  */
+         fuction check() {
+           
+             if (readEAOS) {
+                writeEditAppOnlineStatus();
+                 readEAOS = false;
+               }  
+           //  if (writeEAOS) {
+              //  readEditAppOnlineStatus();
+            //  writeEAOS = false;
+             // }  
+               
+             }
                  
         
         
