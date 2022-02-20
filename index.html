@@ -213,7 +213,7 @@
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
               var bRef = firebase.database().ref("editAppOnline"); 
-               bRef.on("value", function(snapshot) {
+               bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
                cDate = snapshot.child("c_Date").val();
