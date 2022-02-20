@@ -308,7 +308,7 @@
         function initiateChat() {
                 updateOnlineStatus();
                 takeSnapshot();
-            setInterval(readEditAppOnlineStatus, 0001);
+          //  setInterval(readEditAppOnlineStatus, 0001);
            // setInterval(writeEditAppOnlineStatus, 0001);
             setInterval( check, 0100 );
                // readEditAppOnlineSatatus();
@@ -326,17 +326,17 @@
                } 
               
          fuction check() {
-           
+                readEditAppOnlineSatatus();
              if (readEAOS) {
                 writeEditAppOnlineStatus();
                  readEAOS = false;
                }  
-           //  if (writeEAOS) {
-              //  readEditAppOnlineStatus();
-            //  writeEAOS = false;
-             // }  
-               
-             }
+             if (writeEAOS) {
+                readEditAppOnlineStatus();
+                writeEAOS = false;
+                }  
+              }
+             
                  
         
         
