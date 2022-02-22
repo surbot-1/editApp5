@@ -271,11 +271,11 @@
               getName();
               getOnlineStatus();
               getDateTime();
-            //  getIP();
+              getIP();
               firebase.database().ref("editAppOnlineStatus").set({
-              a_Name: aName , 
-              b_Status: status , 
-              c_Date: dateTime , 
+              a_Name: aName, 
+              b_Status: status, 
+              c_Date: dateTime, 
               d_IP: dIP
              // e_Typing: "typing..."
                }); 
