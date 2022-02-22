@@ -263,24 +263,24 @@
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
               }
-          
-               
-            
-             // writeEditAppOnlineSatatus();
+          // writeEditAppOnlineSatatus();
        function writeEditAppOnlineSatatus() { 
               getName();
               getOnlineStatus();
               getDateTime();
               // getIP();
               firebase.database().ref("editAppOnlineStatus").set({
-              d_IP: dIP, 
+              
               a_Name: aName, 
               b_Status: status, 
-              c_Date: dateTime 
-              
-             // e_Typing: "typing..."
+              c_Date: dateTime, 
+
+              d_IP: dIP 
                }); 
               }
+               
+            
+             
         
       
         
@@ -293,7 +293,7 @@
              //  bStatus = snapshot.child("b_Status").val();
              //  cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
-               eTyping = snapshot.child("e_Typing").val();
+               eTyping = snapshot.child("e_Typing")al();
              //  document.querySelector('#div5').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div5').innerHTML = aName + " " + eTyping ;
                 }); 
@@ -410,7 +410,7 @@
                 }
                }
                     
-               
+               alert('1');
               
         // function check() {
              //   readEditAppOnlineSatatus();
