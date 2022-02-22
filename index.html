@@ -39,6 +39,12 @@
     <div id="div6"></div>
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
+    
+   <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/production.min.js"></script>
+   <!---- OR use the dev bundle: ----->
+   <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
+    
+    
     <!--
     <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
     -->
@@ -238,7 +244,7 @@
                dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
-               document.querySelector('#div4').innerHTML += ' ' + dIP ;
+               document.querySelector('#div4').innerHTML += " " + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
               }
@@ -257,7 +263,7 @@
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
-              d_IP: "dIP"  
+              d_IP: dIP  
              // e_Typing: "typing..."
                }); 
               }
@@ -317,11 +323,23 @@
               dateTime = date +" "+ time;
               }
         
-      /*  function getIP() {
-             dIP = getIPs();   // .then(res => document.write(res.join('\n')));
-             // dIP = res.join('\n');
-              } */
-             
+   function getIP() {
+         var dIP1 = null;
+         var dIP2 = null;
+         dIP = null;
+         var data = [null];
+        // Using Async/Await:
+       (async function(){
+        data = await getIPs();
+        while( data[0] == null || data[1] == null) {
+        if( data[0] != null && data[1] != null) {break;}
+         }
+          dIP1 = data[0];
+          dIP2 = data[1];
+        //  dIP = dIP1+" "+dIP2;
+          dIP = dIP2;
+          })();
+         }
         
         function messageClear() {
                document.querySelector('#div6').innerHTML = "";
