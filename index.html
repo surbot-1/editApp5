@@ -271,12 +271,13 @@
               getName();
               getOnlineStatus();
               getDateTime();
-              getIP();
+              // getIP();
               firebase.database().ref("editAppOnlineStatus").set({
+              d_IP: dIP, 
               a_Name: aName, 
               b_Status: status, 
-              c_Date: dateTime, 
-              d_IP: dIP
+              c_Date: dateTime 
+              
              // e_Typing: "typing..."
                }); 
               }
