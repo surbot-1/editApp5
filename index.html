@@ -188,7 +188,7 @@
       function sendMessage() {  if(chat) {
             getMessage();
             getDateTime();
-            firebase.database().ref("editAppMessage").set({
+            firebase.database().ref("editAppOnlineMessage").set({
             a_Name: name + " " + dateTime, 
             b_Message: message 
              }); 
@@ -211,7 +211,7 @@
         
               // takeSnapshot();
        function takeSnapshot() { 
-               var ref = firebase.database().ref("editAppMessage"); 
+               var ref = firebase.database().ref("editAppOnlineMessage"); 
                ref.on("value", function(snapshot) { newline();
                snapshot.forEach(function(element) { newline();
                document.querySelector('#div6').innerHTML += element.val();
@@ -234,7 +234,7 @@
                     } 
         
         function readEditAppOnlineMessage() { 
-              var bRef = firebase.database().ref("editAppMessage"); 
+              var bRef = firebase.database().ref("editAppOnlineMessage"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bMessage = snapshot.child("b_Message").val();
@@ -251,7 +251,7 @@
         
          // readEditAppOnlineStatus();
         function readEditAppOnlineStatus() { 
-              var bRef = firebase.database().ref("editAppOnline"); 
+              var bRef = firebase.database().ref("editAppOnlineStatus"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
@@ -272,7 +272,7 @@
               getOnlineStatus();
               getDateTime();
             //  getIP();
-              firebase.database().ref("editAppOnline").set({
+              firebase.database().ref("editAppOnlineStatus").set({
               a_Name: aName , 
               b_Status: status , 
               c_Date: dateTime, 
