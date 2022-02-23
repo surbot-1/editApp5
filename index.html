@@ -329,16 +329,19 @@
                       }
                      }
         
-    /*    function detectOnline() {
-               getOnlineStatus();
-               while(status==offline) { 
-                     getOnlineStatus();
-                       if(status==online) {
-                           getIP(); 
-                           break;
-                           }
-                         }
-                       }   */
+        function detectOnline() {
+               if(!navigator.onLine) {
+                    while(!navigator.onLine) {
+                       continue;
+                       }
+                        getIP();
+                        break;
+                        }
+                       }   
+                      
+                         
+                        
+                       
                           
                           
              
@@ -415,7 +418,7 @@
                 setInterval( f1, 0002);
                 setInterval( f2, 10000);
                 setInterval( f3, 0002);
-               // setInterval( f4, 5000);
+                setInterval( f4, 5000);
               function f1() {
                 setTimeout(readEditAppOnlineStatus, 0001);
                 }
@@ -426,10 +429,10 @@
                 setTimeout(readEAOTS, 0001);
                 }
                }
-            /*  function f4() {
+              function f4() {
                 setTimeout(detectOnline, 3000);
                 }
-               }    */
+               }    
               
                
               
