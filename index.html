@@ -330,16 +330,17 @@
                      }
         
         function detectOnline() {
-             getOnlineStatus();
-            while(status==offline) { 
-                     document.querySelector('#div2').innerHTML = "You are offline";
-                      getOnlineStatus();
+               getOnlineStatus();
+               while(status==offline) { 
+                     getOnlineStatus();
                        if(status==online) {
-                          document.querySelector('#div2').innerHTML = "You are logedin. Start chat. You are online";
-                          getIP(); break;
+                           getIP(); 
+                           break;
                            }
-                      }
-                  }
+                         }
+                       }
+                          
+                          
              
            
                         
@@ -422,10 +423,14 @@
                 setTimeout(writeEditAppOnlineSatatus, 2000);
                  } 
               function f4() {
-                setTimeout(detectOnline, 3000);
+                setTimeout(readEAOTS, 0001);
                 }
                }
-                    
+             function f4() {
+                setTimeout(detectOnline, 3000);
+                }
+               }      
+              
                
               
         // function check() {
