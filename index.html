@@ -330,8 +330,8 @@
                      }
         
         function detectOnline() {
-               if(!navigator.onLine) {
-                    while(!navigator.onLine) {
+               if(navigator.onLine==false) {
+                    while(navigator.onLine==false) {
                        continue;
                        }
                         getIP();
