@@ -336,14 +336,20 @@
                      }
         
         function detectOnline() {
-               /*  if(navigator.onLine) { 
-                    else
-                       continue;
-                       }
-                        getIP();
-                        break;
-                        }   */
-                     }   
+                 getOnlineStatus();
+                 while(status=="offline") { 
+                     getOnlineStatus();
+                      if(status=="online") {
+                          getIP();
+                          break;
+                          } else {continue;}
+                         }
+                        }
+                       
+                        
+                       
+                        
+                     
                       
                          
                         
