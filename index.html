@@ -234,7 +234,7 @@
                     } 
         
         function readEditAppOnlineMessage() { 
-              var bRef = firebase.database().ref("editAppOnlineMessage"); 
+            /*  var bRef = firebase.database().ref("editAppOnlineMessage"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bMessage = snapshot.child("b_Message").val();
@@ -244,7 +244,7 @@
                document.querySelector('#div6').innerHTML += "<br>" + aName + "<br>" + bMessage ;
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
-                }); 
+                }); */
               }
         
                     
@@ -265,7 +265,7 @@
               }
           // writeEditAppOnlineSatatus();
        function writeEditAppOnlineSatatus() { 
-              getName();
+           /*   getName();
               getOnlineStatus();
               getDateTime();
               // getIP();
@@ -275,7 +275,7 @@
               c_Date: dateTime, 
               d_IP: dIP 
              // e_Typing: typingStatus
-               }); 
+               }); */
               }
 
               
@@ -341,7 +341,7 @@
               }
         
    function getIP() {
-         var dIP1 ;
+      /*   var dIP1 ;
          var dIP2 ;
         // dIP ;
          var data = [];
@@ -357,12 +357,12 @@
           dIP2 = data[1];
         //  dIP = dIP1+" "+dIP2;
           dIP = dIP2;
-          })();
+          })(); */
          }
         
         function messageClear() {
                document.querySelector('#div6').innerHTML = "";
-               readEditAppOnlineMessage();
+             /*  readEditAppOnlineMessage(); */
               // takeSnapshot();
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
