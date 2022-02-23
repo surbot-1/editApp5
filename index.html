@@ -94,7 +94,7 @@
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
         var dateTime, status, readEAOS, writeEAOS ;
      
-                 getIP();
+            /*     getIP();
                  getDateTime();
         function gotoLogin() { 
              document.querySelector('#div2p1').innerHTML = "Please wait...";
@@ -183,7 +183,7 @@
                   document.querySelector('#div2p1').innerHTML += "Signup done" ;
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Username:" + cUsername ;
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Password:" + dPassword ;
-                  }
+                  }    */
        
       function sendMessage() {  if(chat) {
             getMessage();
@@ -210,8 +210,8 @@
       
         
               // takeSnapshot();
-       function takeSnapshot() { 
-               var ref = firebase.database().ref("editAppOnlineMessage"); 
+       function takeSnapshot() { alert("1");
+           /*    var ref = firebase.database().ref("editAppOnlineMessage"); 
                ref.on("value", function(snapshot) { newline();
                snapshot.forEach(function(element) { newline();
                document.querySelector('#div6').innerHTML += element.val();
@@ -219,18 +219,18 @@
                // <div>${element.val()}<\div>
                // ` 
                 }); 
-               });
+               });  */
               }
         
         // OnlineStatus();
-        function updateOnlineStatus() { 
-                 if (navigator.onLine) {
+        function updateOnlineStatus() {      alert("1");
+              /*   if (navigator.onLine) {
                    status = "online";
                    document.querySelector('#div4').innerHTML = "You are online" ;
                      } else {
                       document.querySelector('#div4').innerHTML = "You are offline" ;
                       status = "offline" ;
-                      }
+                      }  */
                     } 
         
         function readEditAppOnlineMessage() { alert("1");
@@ -318,28 +318,28 @@
               
         
        function getName() {
-              aName = document.getElementById("nameField").value ;
+           //   aName = document.getElementById("nameField").value ;
               }  
        
         function newline() {
-               document.querySelector('#div6').innerHTML += '<br>' ;
+             //  document.querySelector('#div6').innerHTML += '<br>' ;
                }  
         
         function getOnlineStatus() { 
-                  if (navigator.onLine) {
+                */  if (navigator.onLine) {
                      status = "online";
                       } else {
                       status = "offline";
-                      }
+                      }  */
                      }
         
         
         function getDateTime() {  
-              var today = new Date();
+           /*   var today = new Date();
                   date =  today.getDate() + "." + (today.getMonth()+1) + "." + today.getFullYear();
                   time= today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-              dateTime = date +" "+ time;
-              }
+              dateTime = date +" "+ time;  */
+              } 
         
    function getIP() {  alert("1");
       /*   var dIP1 ;
@@ -367,8 +367,8 @@
               // takeSnapshot();
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
-             //  initiateChat();
-                }  */
+             //  initiateChat();  */
+                }  
         
         
         document.getElementById("messageField").addEventListener("keydown", keyDown);
