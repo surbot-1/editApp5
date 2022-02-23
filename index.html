@@ -188,8 +188,10 @@
             getMessage();
             getDateTime();
             firebase.database().ref("editAppMessage").set({
-            a_Name: name + " " + dateTime, 
-            b_Message: message 
+            a_Name: name, 
+            b_Message: message, 
+            c_Date: dateTime, 
+            d_IP: aIP 
              }); 
             document.getElementById("messageField").value = "";
            // getDateTime();
@@ -211,13 +213,17 @@
               // takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editAppMessage"); 
-               ref.on("value", function(snapshot) { newline();
-               snapshot.forEach(function(element) { newline();
-               document.querySelector('#div6').innerHTML += element.val();
+               ref.on("value", function(snapshot) { // newline();
+               aName = snapshot.child("a_Name").val();
+               bMessage = snapshot.child("b_Message").val();
+               cDate = snapshot.child("c_Date").val();
+              // dIP = snapshot.child("d_IP").val();                          
+              //  snapshot.forEach(function(element) { newline();
+               document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
-                }); 
+               //  }); 
                });
               }
         
@@ -237,8 +243,8 @@
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bMessage = snapshot.child("b_Message").val();
-              // cDate = snapshot.child("c_Date").val();
-             //  dIP = snapshot.child("d_IP").val();
+               cDate = snapshot.child("c_Date").val();
+              // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
                document.querySelector('#div6').innerHTML += "<br>" + aName + "<br>" + bMessage ;
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
