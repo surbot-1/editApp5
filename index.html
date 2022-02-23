@@ -233,7 +233,7 @@
                       }
                     } 
         
-        function readEditAppOnlineMessage() { 
+        function readEditAppOnlineMessage() { alert("1");
             /*  var bRef = firebase.database().ref("editAppOnlineMessage"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
@@ -250,8 +250,8 @@
                     
         
          // readEditAppOnlineStatus();
-        function readEditAppOnlineStatus() { 
-              var bRef = firebase.database().ref("editAppOnlineStatus"); 
+        function readEditAppOnlineStatus() { alert("1");
+           /*   var bRef = firebase.database().ref("editAppOnlineStatus"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
                bStatus = snapshot.child("b_Status").val();
@@ -261,10 +261,11 @@
                document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div4').innerHTML += " " + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
-                }); 
+                }); */
               }
+        
           // writeEditAppOnlineSatatus();
-       function writeEditAppOnlineSatatus() { 
+       function writeEditAppOnlineSatatus() { alert("1");
            /*   getName();
               getOnlineStatus();
               getDateTime();
@@ -287,8 +288,8 @@
         
         
           
-        function readEAOTS() { 
-              var bRef = firebase.database().ref("editAppOnlineTyping"); 
+        function readEAOTS() { alert("1");
+         /*     var bRef = firebase.database().ref("editAppOnlineTyping"); 
                bRef.once("value", function(snapshot) {
                aName = snapshot.child("a_Name").val();
              //  bStatus = snapshot.child("b_Status").val();
@@ -297,12 +298,12 @@
                eTyping = snapshot.child("e_Typing")al();
              //  document.querySelector('#div5').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div5').innerHTML = aName + " " + eTyping ;
-                }); 
+                }); */
                }
                 
               
-        function writeEAOTS() { 
-              getName();
+        function writeEAOTS() {  alert("1");
+          /*    getName();
            //  getOnlineStatus();
            //   getDateTime();
            // getIP();
@@ -312,7 +313,7 @@
            //  c_Date: dateTime, 
            // d_IP: dIP,   
               e_Typing: typingStatus
-               });
+               });   */
               }
               
         
@@ -340,7 +341,7 @@
               dateTime = date +" "+ time;
               }
         
-   function getIP() {
+   function getIP() {  alert("1");
       /*   var dIP1 ;
          var dIP2 ;
         // dIP ;
@@ -360,14 +361,14 @@
           })(); */
          }
         
-        function messageClear() {
-               document.querySelector('#div6').innerHTML = "";
-             /*  readEditAppOnlineMessage(); */
+        function messageClear() {  alert("1");
+            /*   document.querySelector('#div6').innerHTML = "";
+               readEditAppOnlineMessage(); 
               // takeSnapshot();
               // readEditAppOnlineSatatus(); 
               // writeEditAppOnlineStatus();
              //  initiateChat();
-                }
+                }  */
         
         
         document.getElementById("messageField").addEventListener("keydown", keyDown);
@@ -389,8 +390,9 @@
                       
  
         
-        function initiateChat() {
-                updateOnlineStatus();
+        function initiateChat() {  alert("1");
+             
+              /*  updateOnlineStatus();
                 takeSnapshot();
           //  setInterval(readEditAppOnlineStatus, 0001);
            // setInterval(writeEditAppOnlineStatus, 0001);
@@ -410,26 +412,16 @@
                  } 
               function f3() {
                 setTimeout(readEAOTS, 0001);
-                }
+                }  */
                }
                     
                
               
-        // function check() {
-             //   readEditAppOnlineSatatus();
-           /// if (readEAOS) {
-              //  writeEditAppOnlineStatus();
-             //    readEAOS = false;
-            ///   }  
-           //  if (writeEAOS) {
-            //    readEditAppOnlineStatus();
-             // writeEAOS = false;
-               // }  
-            //  }
+        
              
                  
         
-        
+        alert("1");
         
         
         
