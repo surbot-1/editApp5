@@ -399,11 +399,14 @@
         document.getElementById("messageField").addEventListener("keydown", keyDown);
         
         function keyDown() {
+             var input= document.getElementById("messageField") ;
+             if( input.textLength == 1) {
                 getDateTime();
                 typingStatus = "typing..." + " " + dateTime ;
-                 writeEAOTS();
-                 }
-               
+                writeEAOTS();
+                // writeEditAppOnlineSatatus();
+                }
+               }
          
                   
         
