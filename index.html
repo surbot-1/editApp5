@@ -15,7 +15,7 @@
     <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField"> <br>
     <button onclick = "gotoSignup()"> Signup </button> 
-       ****Please Login to start chat****
+       *****Please Login to start chat*****
     <button onclick = "gotoLogin()"> Login </button> <br>
    <!-- <input type="text" placeholder="Name" id="nameField">
     <input type="number" placeholder="Phone" id="phonedField">  -->
@@ -43,7 +43,7 @@
     <div id="div8dwn">
     Name <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField">
     Clear message <button onclick = "messageClear()"> Clear </button> <br>
-    <textarea  rows = "5" cols = "44" placeholder="Message" id="messageField"></textarea>
+    <textarea  rows = "5" cols = "40" placeholder="Message" id="messageField"></textarea>
     <button onclick = "sendMessage()"> Send </button>
     </div>
     
@@ -259,7 +259,7 @@
               // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
               // document.querySelector('#div6').innerHTML += "<br>" + aName + " " + cDate + "<br>" + bMessage + "<br>" ;
-               document.getElementById("textField").setContent = "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
+               document.getElementById("textField").value = "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
