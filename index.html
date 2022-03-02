@@ -398,15 +398,18 @@
         
         document.getElementById("messageField").addEventListener("keydown", keyDown);
         
-        function keyDown() {
-             var input= document.getElementById("messageField") ;
-             if( input.textLength == 1) {
+        function keyDown(e) {
+            var input= document.getElementById("messageField") ;
+            if (input.textLength == 1) {
                 getDateTime();
                 typingStatus = "typing..." + " " + dateTime ;
                 writeEAOTS();
                 // writeEditAppOnlineSatatus();
                 }
+            if (e.key === 13) {
+                document.getElementById("messageField").value = "";
                }
+            }
          
                   
         
