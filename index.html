@@ -230,8 +230,8 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();                          
               //  snapshot.forEach(function(element) { newline();
-              // document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
-               document.getElementById("textField").value += "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
+               document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
+               // document.getElementById("textField").value += "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
@@ -258,9 +258,9 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
-              // document.querySelector('#div6').innerHTML += "<br>" + aName + " " + cDate + "<br>" + bMessage + "<br>" ;
-               document.getElementById("textField").value = "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
-              // document.querySelector('#div6').innerHTML += ' ' + dIP ;
+               document.querySelector('#div6').innerHTML += "<br>" + aName + " " + cDate + "<br>" + bMessage + "<br>" ;
+              // document.getElementById("textField").value = "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
+               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
               }
