@@ -37,6 +37,11 @@
     <div id="div4"></div>
     <div id="div5"></div>
     <div id="div6"></div>
+    
+    <div id="div7">
+        <textarea  rows = "500" cols = "50" id="textField"></textarea>
+    </div>
+    
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
     
@@ -220,7 +225,8 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();                          
               //  snapshot.forEach(function(element) { newline();
-               document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
+              // document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
+               document.getElementById("textField").setContent += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
