@@ -1,4 +1,4 @@
-function getDateTime() { 
+            function getDateTime() { 
                      var ampm=true, sec=false;
                      let  today = new Date();
                      var day   = today.getDate() < 10 ? "0" + today.getDate() : today.getDate() ; 
