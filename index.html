@@ -13,9 +13,10 @@
     
     <div id="div2"  style="  width:400px;  border: 1px solid blue; font-size:16px " >
     <input type="password" placeholder="Username" id="usernameField">
-    <input type="password" placeholder="Password" id="passwordField"> <br>
+    <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField"> <br>
+    <input type="password" placeholder="Password" id="passwordField"> 
     <button onclick = "gotoSignup()"> Signup </button> 
-       -------Please Login to start chat-------
+       Please Login
     <button onclick = "gotoLogin()"> Login </button> <br>
    <!-- <input type="text" placeholder="Name" id="nameField">
     <input type="number" placeholder="Phone" id="phonedField">  -->
@@ -49,8 +50,8 @@
     <div id="div8"></div>
     
     <div id="div8dwn"  style="  width:400px;  border: 1px solid blue; font-size:16px " >
-    Name <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField">
-    Message <button onclick = "messageClear()"> Clear </button> <br>
+    <!-- Name <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField">
+    Message Clear <button onclick = "messageClear()"> Clear </button> <br>   -->
     <textarea  rows = "4" cols = "40" placeholder="Message" id="messageField"></textarea>
     <button onclick = "sendMessage()"> Send </button>
     </div>
