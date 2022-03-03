@@ -31,12 +31,15 @@
     <div id="div3"></div>
     <div id="div4"></div>
     <div id="div5"></div>
-        
-    <div id="div5dwn">
-        <textarea  rows = "20" cols = "50" id="textField"></textarea>
-    </div>
     
-    <div id="div6"></div>
+    <div id="div6" width="50" height="50">
+    </div>
+        <!--
+    <div id="div5dwn2">
+        <textarea  rows = "20" cols = "50" id="textField"></textarea>
+    </div>  -->
+    
+    <div id="div6a"></div>
     <div id="div7"></div>
     <div id="div8"></div>
     
@@ -231,8 +234,8 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();                          
               //  snapshot.forEach(function(element) { newline();
-              // document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
-               document.getElementById("textField").value += "\n" +aName+" "+cDate+"\n"+bMessage+"\n";
+               document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
+              // document.getElementById("textField").value += "\n" +aName+" "+cDate+"\n"+bMessage+"\n";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
