@@ -7,8 +7,8 @@
     <title>editApp</title>
 </head>
 <body style="background-color:aliceblue">
-  <div id="maindiv"  style="background-color:lightgray; width:400px; border: 1px solid blue " >
-   <div id="div1&2" style=" width:400px">
+  <div id="maindiv"  style="background-color:lightgray; width:400px">
+  
     <div id="div1"  style=" width:400px;  border: 1px solid blue; color:red; font-size:16px " >
      Welcome to editApp FamilyDay 
     </div>
@@ -25,7 +25,7 @@
     
     <p id="div2p1"></p>
     </div>
-    </div>
+    
     
     <div id="div3"  style="  width:400px;  border: 1px solid blue; font-size:16px " >
     Name <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField">
@@ -139,8 +139,8 @@
               e_Date: dateTime, 
               f_IP: aIP
               });
-                  document.querySelector('#div1&2').innerHTML = "";
-                 // document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
+                  document.querySelector('#div1').innerHTML = "";
+                  document.querySelector('#div2').innerHTML = "";
                   initiateChat();
                  //  updateOnlineStatus();
                 //  readEditAppOnlineStatus();
