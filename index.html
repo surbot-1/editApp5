@@ -6,7 +6,8 @@
 <head>
     <title>editApp</title>
 </head>
-<body style="background-color:lightgray" >
+<body style="background-color:lightgray">
+  <div style="background-color:#33475b" id="maindiv" >
     <div id="div1"  style="  width:400px;  border: 1px solid blue; color:red; font-size:16px " >
      Welcome to editApp FamilyDay 
     </div>
@@ -25,7 +26,7 @@
     </div>
     
     
-    <div id="div2dwn"  style="  width:400px;  border: 1px solid blue; font-size:16px " >
+    <div id="div3"  style="  width:400px;  border: 1px solid blue; font-size:16px " >
     Name <input type="text" onkeydown="onKeyDown()" placeholder="Name" id="nameField">
     Message <button onclick = "messageClear()"> Clear </button> <br> 
     </div>
@@ -35,7 +36,7 @@
     <button onclick = "readEditAppOnlineSatatus()"> readEditAppOnlineSatatus </button>
     <div/>  -->
     
-    <div id="div3"  style="  width:400px;  border: 1px solid blue; font-size:16px" ></div>
+    <div id="div3dwn"  style="  width:400px;  border: 1px solid blue; font-size:16px" ></div>
     <div id="div4"  style="  width:400px;  border: 1px solid blue; font-size:16px" ></div>
     <div id="div5"  style="  width:400px;  border: 1px solid blue; font-size:16px" ></div>
     
@@ -65,6 +66,8 @@
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
     
+   </div>
+      
    <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/production.min.js"></script>
    <!---- OR use the dev bundle: ----->
    <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
@@ -246,8 +249,8 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();                          
               //  snapshot.forEach(function(element) { newline();
-               document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
-               document.getElementById("textField").value += "\n" +aName+" "+cDate+"\n"+bMessage+"\n";
+               document.querySelector('#div6').innerHTML += aName+" "+cDate+"<br>"+bMessage+"<br>"+"<br>";
+              // // document.getElementById("textField").value += aName+" "+cDate+"\n"+bMessage+"\n"+"\n";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
@@ -274,8 +277,8 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
-              // document.querySelector('#div6').innerHTML += "<br>" + aName + " " + cDate + "<br>" + bMessage + "<br>" ;
-               document.getElementById("textField").value = "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
+               document.querySelector('#div6').innerHTML += aName + " " + cDate + "<br>" + bMessage + "<br>" + "<br>" ;
+             // //  document.getElementById("textField").value = aName+" "+cDate+"\n"+bMessage+"\n"+"\n";
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
