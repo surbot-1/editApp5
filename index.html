@@ -205,7 +205,8 @@
             d_IP: aIP 
              }); 
             document.getElementById("messageField").value = "";
-           // getDateTime();
+            
+          // getDateTime();
             typingStatus = "sent message" + " " + dateTime ;
             writeEAOTS();
                } else {
@@ -231,7 +232,7 @@
               // dIP = snapshot.child("d_IP").val();                          
               //  snapshot.forEach(function(element) { newline();
               // document.querySelector('#div6').innerHTML += "<br>"+aName+" "+cDate+"<br>"+bMessage+"<br>";
-               document.getElementById("textField").value += "<br>" +aName+" "+cDate+"<br>"+bMessage+"<br>";
+               document.getElementById("textField").value += "\n" +aName+" "+cDate+"\n"+bMessage+"<br>";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
                // ` 
