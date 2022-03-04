@@ -10,8 +10,8 @@
                      var gmt = "+0530"
                      if(ampm) { 
                      var part = hours < 12 ? 'am' : 'pm' ;
-                     hours = hours % 12; hours<10 ? "0"+hours : hours;
-                     hours = hours ? hours : 12 ;
+                     hours = hours % 12; 
+                     hours = hours ? hours : 12 ; hours<10 ? "0"+hours : hours;
                       date = day +"."+ month +"."+ year ;
                       time = hours +":"+ minutes +" "+ part ;
                             if(sec) {   
