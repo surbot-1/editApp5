@@ -67,6 +67,10 @@
     <button onclick = "sendMessage()"> Send </button>
     </div>
     
+<canvas id="canvas" width="1080" height="640" style="border:solid black 1px;">
+  Your browser does not support canvas element.
+</canvas>
+    
     <div id="root" ></div>
     <div> <p id="root2"></p> </div>
     
@@ -490,14 +494,24 @@
                // }  
             //  }
              
-                 
+</script>      
+    
+        
+<script>   
+      
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext('2d');
+// var file = document.getElementById("file").files[0] ;
+  
+        var image = new Image();
+        image.setAttribute('crossOrigin', 'anonymous');
+        image.src = 'keypad1.png';
+        image.onload = function (e) {
+          context.drawImage(image, 0, 0, 1080, 640);
+        };
         
         
-        
-        
-        
-        
-    </script>
+</script>
 
     
 </body>
