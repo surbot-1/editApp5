@@ -512,14 +512,20 @@ var context = canvas.getContext('2d');
           context.drawImage(image, 0, 0, 1080, 640);
         };
     
+  var el = document.getElementById("canvas");
+  el.addEventListener("touchstart", handleStart, false);
+   
   function handleStart(evt) {
   evt.preventDefault();
   // console.log("touchstart.");
   var el = document.getElementById("canvas");
   var ctx = el.getContext("2d");
   var touches = evt.changedTouches;
+  var  x = touches[0].pageX;
+  var  y = touches[0].pageY;
+  document.getElimentById("div6").innerHTML += "<br>"+ x +" "+ y;
 
-  for (var i = 0; i < touches.length; i++) {
+ /* for (var i = 0; i < touches.length; i++) {
    // console.log("touchstart:" + i + "...");
     ongoingTouches.push(copyTouch(touches[i]));
     var color = colorForTouch(touches[i]);
@@ -528,9 +534,19 @@ var context = canvas.getContext('2d');
     ctx.fillStyle = color;
     ctx.fill();
    // console.log("touchstart:" + i + ".");
-  }
+  } */
 }
-        
+    
+    
+  function startup() {
+  var el = document.getElementById("canvas");
+  el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleEnd, false);
+  el.addEventListener("touchcancel", handleCancel, false);
+  el.addEventListener("touchmove", handleMove, false);
+}
+
+// document.addEventListener("DOMContentLoaded", startup);
         
 </script>
 
