@@ -511,10 +511,10 @@ var context = canvas.getContext('2d');
         image.onload = function (e) {
           context.drawImage(image, 0, 0, 1080, 640);
         };
-    
+    /*
   var el = document.getElementById("canvas");
   el.addEventListener("touchstart", handleStart, false);
-   
+    */
   function handleStart(evt) {
   evt.preventDefault();
   // console.log("touchstart.");
@@ -524,21 +524,44 @@ var context = canvas.getContext('2d');
   var  x = touches[0].pageX;
   var  y = touches[0].pageY;
   document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
-
- /* for (var i = 0; i < touches.length; i++) {
-   // console.log("touchstart:" + i + "...");
-    ongoingTouches.push(copyTouch(touches[i]));
-    var color = colorForTouch(touches[i]);
-    ctx.beginPath();
-    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start
-    ctx.fillStyle = color;
-    ctx.fill();
-   // console.log("touchstart:" + i + ".");
-  } */
 }
+
+function handleMove(evt) {
+  evt.preventDefault();
+  var el = document.getElementById("canvas");
+  var ctx = el.getContext("2d");
+  var touches = evt.changedTouches;
+  var  x = touches[0].pageX;
+  var  y = touches[0].pageY;
+  document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
+ }
     
+function handleEnd(evt) {
+  evt.preventDefault();
+  // log("touchend");
+  var el = document.getElementById("canvas");
+  var ctx = el.getContext("2d");
+  var touches = evt.changedTouches;
+  var  x = touches[0].pageX;
+  var  y = touches[0].pageY;
+  document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
+ }
     
-  function startup() {
+function handleCancel(evt) {
+  evt.preventDefault();
+  // console.log("touchcancel.");
+  var touches = evt.changedTouches;
+  var  x = touches[0].pageX;
+  var  y = touches[0].pageY;
+  document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
+ }
+    
+function log(msg) {
+  var p = document.getElementById('Div6');
+  p.innerHTML = msg + "\n" + p.innerHTML;
+ }
+    
+function startup() {
   var el = document.getElementById("canvas");
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
@@ -546,7 +569,7 @@ var context = canvas.getContext('2d');
   el.addEventListener("touchmove", handleMove, false);
 }
 
-// document.addEventListener("DOMContentLoaded", startup);
+ document.addEventListener("DOMContentLoaded", startup);
         
 </script>
 
