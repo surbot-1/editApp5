@@ -44,7 +44,7 @@
     <div id="div4"  style="  width:400px;  border: 1px solid blue; font-size:16px" ></div>
     <div id="div5"  style="  width:400px;  border: 1px solid blue; font-size:16px" ></div>
     
-    <div id="div6"  style="  width:400px; height:1200px; border: 1px solid blue; font-size:16px " >
+    <div id="div6"  style="  width:400px; height:11340px; border: 1px solid blue; font-size:16px " >
     </div>
     
     <!--
@@ -533,7 +533,7 @@ function handleMove(evt) {
   var touches = evt.changedTouches;
   var  x = touches[0].pageX;
   var  y = touches[0].pageY;
-  document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
+ // document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
  }
     
 function handleEnd(evt) {
@@ -544,7 +544,7 @@ function handleEnd(evt) {
   var touches = evt.changedTouches;
   var  x = touches[0].pageX;
   var  y = touches[0].pageY;
-  document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
+ // document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
  }
     
 function handleCancel(evt) {
@@ -553,7 +553,7 @@ function handleCancel(evt) {
   var touches = evt.changedTouches;
   var  x = touches[0].pageX;
   var  y = touches[0].pageY;
-  document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
+  // document.getElementById("div6").innerHTML += "<br>"+ x +" "+ y;
  }
     
 function log(msg) {
