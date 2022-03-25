@@ -291,7 +291,10 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
-               document.querySelector('#div6').innerHTML += aName + " " + cDate + "<br>" + bMessage + "<br>" + "<br>" ;
+                   if (aName==document.getElementById("nameField").value) {
+               document.querySelector('#div6').innerHTML += "                            " ; 
+                   }
+               document.querySelector('#div6').innerHTML += aName + " " + cDate + "<br>" + bMessage + "<br>" ;
              // //  document.getElementById("textField").value = aName+" "+cDate+"\n"+bMessage+"\n"+"\n";
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
