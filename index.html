@@ -347,11 +347,11 @@
         function readEAOTS() { 
               var bRef = firebase.database().ref("editAppOnlineTyping"); 
                bRef.once("value", function(snapshot) {
-               aName = snapshot.child("a_Name").val();
+              var aName = snapshot.child("a_Name").val();
              //  bStatus = snapshot.child("b_Status").val();
              //  cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
-               eTyping = snapshot.child("e_Typing").val();
+              var eTyping = snapshot.child("e_Typing").val();
                    var uName; if (aName==name()) {uName="You";} else {uName=aName;}
              //  document.querySelector('#div5').innerHTML = aName + " " + bStatus + " " + cDate ;
                document.querySelector('#div5').innerHTML = uName + " " + eTyping ;
