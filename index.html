@@ -244,9 +244,14 @@
              }
       
         
-       function getMessage() {
+        function getMessage() {
               name = document.getElementById("nameField").value ;
               message = document.getElementById("messageField").value ;
+              }
+        
+        function name() {
+              var name = document.getElementById("nameField").value ;
+              return name;
               }
         
       
@@ -261,7 +266,7 @@
               // dIP = snapshot.child("d_IP").val();                          
               //  snapshot.forEach(function(element) { 
                    if (aName==(document.getElementById("nameField").value)) {
-               document.querySelector('#div6').innerHTML +=" "+"                  You"+" "+cDate+"<br>"+bMessage+"<br>" ; 
+               document.querySelector('#div6').innerHTML +=" "+"You"+" "+cDate+"<br>"+bMessage+"<br>" ; 
                    } else {
                document.querySelector('#div6').innerHTML += aName+" "+cDate+"<br>"+bMessage+"<br>" ; 
                    }
@@ -292,11 +297,8 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
-                   if (aName==(document.getElementById("nameField").value)) {
-               document.querySelector('#div6').innerHTML += "You"+" "+cDate+"<br>"+bMessage+"<br>" ; 
-                   } else {
-               document.querySelector('#div6').innerHTML += aName+" "+cDate+"<br>"+bMessage+"<br>" ; 
-                   }
+                var uName; if (aName==name()) {uName=="You";} else {uName=aName;}
+               document.querySelector('#div6').innerHTML += uName+" "+cDate+"<br>"+bMessage+"<br>" ;
              // //  document.getElementById("textField").value = aName+" "+cDate+"\n"+bMessage+"\n"+"\n";
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
@@ -314,7 +316,8 @@
                cDate = snapshot.child("c_Date").val();
                dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
-               document.querySelector('#div4').innerHTML = aName + " " + bStatus + " " + cDate ;
+                var uName; if (aName==name()) {uName="You";} else {uName=aName;}
+               document.querySelector('#div4').innerHTML = uName + " " + bStatus + " " + cDate ;
                document.querySelector('#div4').innerHTML += " " + dIP ;
               // readEAOS = true; //  writeEditAppOnlineStatus();
                 }); 
@@ -349,8 +352,9 @@
              //  cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
                eTyping = snapshot.child("e_Typing").val();
+                   var uName; if (aName==name()) {uName="You";} else {uName=aName;}
              //  document.querySelector('#div5').innerHTML = aName + " " + bStatus + " " + cDate ;
-               document.querySelector('#div5').innerHTML = aName + " " + eTyping ;
+               document.querySelector('#div5').innerHTML = uName + " " + eTyping ;
                 }); 
                }
                 
@@ -371,7 +375,7 @@
               
         
        function getName() {
-              aName = document.getElementById("nameField").value ;
+              aName = document.getElementById("nameField").value ; 
               }  
        
         function newline() {
