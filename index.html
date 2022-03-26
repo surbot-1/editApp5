@@ -127,7 +127,7 @@
         var password ; // = document.getElementById("passwordField").value ;
         var name ;     // = document.getElementById("nameField").value ;
         var message ;  // = document.getElementById("messageField").value ;
-        var chat = false;
+        var chat = false; var length=0;
         var userSignup = false;
         var phone, typingStatus, date, time, aIP ;
         var aName, bPhone, cUsername, dPassword, bStatus, cDate, dIP, eTyping ;
@@ -234,6 +234,7 @@
             d_IP: aIP 
              }); 
             document.getElementById("messageField").value = "";
+            length=0;
             
           // getDateTime();
             typingStatus = "sent message" + " " + dateTime ;
@@ -442,7 +443,8 @@
         
         function keyDown(e) {
             var input= document.getElementById("messageField") ;
-            if (input.textLength == 1) {
+            var l = input.textLength;
+            if (length == 0) { length++;
                 getDateTime();
                 typingStatus = "typing..." + " " + dateTime ;
                 writeEAOTS();
