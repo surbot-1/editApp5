@@ -441,10 +441,10 @@
         
         document.getElementById("messageField").addEventListener("keyup", keyDown);
         
-        function keyDown(e) {
+        function keyDown(e) { length++;
             var input= document.getElementById("messageField") ;
             var l = input.textLength;
-            if (length == 0) { length++;
+            if (length == 1) {
                 getDateTime();
                 typingStatus = "typing..." + " " + dateTime ;
                 writeEAOTS();
@@ -452,6 +452,10 @@
                 }
             if (e.key === "Enter") {
                   sendMessage();
+                  getDateTime();
+                  typingStatus = "sent message" + " " + dateTime ; 
+                  writeEAOTS(); 
+                  length=0; 
                // document.getElementById("messageField").value = "";
                }
             }
