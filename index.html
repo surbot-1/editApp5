@@ -270,7 +270,7 @@
                document.querySelector('#div6').innerHTML +=" "+"You"+" "+cDate+"<br>"+bMessage+"<br>" ; 
                    } else {
                document.querySelector('#div6').innerHTML += aName+" "+cDate+"<br>"+bMessage+"<br>" ; 
-                   }
+                   } readEAOTS();
               // // document.getElementById("textField").value += aName+" "+cDate+"\n"+bMessage+"\n"+"\n";
                // document.querySelector('#root').innerHTML +=`
                // <div>${element.val()}<\div>
@@ -298,7 +298,7 @@
                cDate = snapshot.child("c_Date").val();
               // dIP = snapshot.child("d_IP").val();
               // eTyping = snapshot.child("e_Typing").val();
-                var uName; if (aName==name()) {uName="You";} else {uName=aName;}
+                var uName; if (aName==name()) {uName="You";} else {uName=aName;} readEAOTS();
                document.querySelector('#div6').innerHTML += uName+" "+cDate+"<br>"+bMessage+"<br>" ;
              // //  document.getElementById("textField").value = aName+" "+cDate+"\n"+bMessage+"\n"+"\n";
               // document.querySelector('#div6').innerHTML += ' ' + dIP ;
@@ -454,7 +454,8 @@
                   sendMessage();
                   getDateTime();
                   typingStatus = "sent message" + " " + dateTime ; 
-                  writeEAOTS(); 
+                  writeEAOTS();
+                  readEAOTS();
                   length=0; 
                // document.getElementById("messageField").value = "";
                }
